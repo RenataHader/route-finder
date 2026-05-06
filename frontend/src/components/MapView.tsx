@@ -12,7 +12,6 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { GeoPoint, RouteLockerResult, SelectionStep } from '../types/types';
 
-// ── Naprawienie domyślnych ikon Leaflet (problem z webpack) ──────────────────
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
@@ -20,7 +19,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
 
-// ── Niestandardowa ikona dla punktu startowego (zielona) ────────────────────
+// Niestandardowa ikona dla punktu startowego (zielona)
 const startIcon = L.divIcon({
   html: `<div style="
     width:30px;height:30px;border-radius:50%;
@@ -34,7 +33,7 @@ const startIcon = L.divIcon({
   className: '',
 });
 
-// ── Niestandardowa ikona dla punktu docelowego (czerwona) ───────────────────
+// ── Niestandardowa ikona dla punktu docelowego (czerwona)
 const endIcon = L.divIcon({
   html: `<div style="
     width:30px;height:30px;border-radius:50%;
@@ -48,7 +47,7 @@ const endIcon = L.divIcon({
   className: '',
 });
 
-// ── Props ────────────────────────────────────────────────────────────────────
+// Props
 
 interface MapViewProps {
   start: GeoPoint | null;
@@ -58,7 +57,7 @@ interface MapViewProps {
   onMapClick: (point: GeoPoint) => void;
 }
 
-// ── Komponent obsługujący kliknięcia na mapie ────────────────────────────────
+// Komponent obsługujący kliknięcia na mapie
 
 function ClickHandler({ onMapClick }: { onMapClick: (p: GeoPoint) => void }) {
   useMapEvents({
@@ -69,13 +68,9 @@ function ClickHandler({ onMapClick }: { onMapClick: (p: GeoPoint) => void }) {
   return null;
 }
 
-// ── Główny komponent mapy ────────────────────────────────────────────────────
-
 const MapView: React.FC<MapViewProps> = ({ start, end, results, step, onMapClick }) => {
   // Domyślne centrum mapy — Polska
   const center: [number, number] = [52.0, 19.5];
-
-  // Kursor mapy zmienia się w zależności od etapu
   const mapStyle: React.CSSProperties = {
     height: '100%',
     width: '100%',
@@ -129,7 +124,7 @@ const MapView: React.FC<MapViewProps> = ({ start, end, results, step, onMapClick
 
       {/* Paczkomaty wynikowe */}
       {results.map((result, index) => {
-        const isBest = index === 0; // Najlepszy wynik = pierwszy po sortowaniu
+        const isBest = index === 0;
 
         return (
           <CircleMarker

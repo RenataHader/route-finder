@@ -26,7 +26,7 @@ const App: React.FC = () => {
   const [routeMessage, setRouteMessage] = useState<string | null>(null);
   const [expandedSearchUsed, setExpandedSearchUsed] = useState(false);
 
-  // ── Obsługa kliknięcia na mapie ───────────────────────────────────────────
+  // Obsługa kliknięcia na mapie
   const handleMapClick = useCallback((point: GeoPoint) => {
     if (step === 'selectStart') {
       setStart(point);
@@ -39,7 +39,7 @@ const App: React.FC = () => {
     }
   }, [step]);
 
-  // ── Wyszukiwanie paczkomatów ──────────────────────────────────────────────
+  // Wyszukiwanie paczkomatów
   const handleSearch = useCallback(async () => {
     if (!start || !end) return;
 
@@ -64,7 +64,7 @@ const App: React.FC = () => {
     }
   }, [start, end, maxDistanceKm]);
 
-  // ── Reset do stanu początkowego ───────────────────────────────────────────
+  //  Reset do stanu początkowego
   const handleReset = useCallback(() => {
     setStart(null);
     setEnd(null);
@@ -75,7 +75,7 @@ const App: React.FC = () => {
     setExpandedSearchUsed(false);
   }, []);
 
-  // ── Etykieta instrukcji ───────────────────────────────────────────────────
+  // Etykieta instrukcji
   const getStepLabel = () => {
     switch (step) {
       case 'selectStart': return '👆 Kliknij na mapie, aby wybrać punkt startowy (A)';
@@ -86,7 +86,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      {/* ── Nagłówek ─────────────────────────────────────────────────────────── */}
+      {/* Nagłówek */}
       <header className="app-header">
         <div className="header-title">
           <span className="header-icon">📦</span>
@@ -95,9 +95,9 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      {/* ── Główny layout ─────────────────────────────────────────────────────── */}
+      {/* Główny layout */}
       <div className="app-body">
-        {/* ── Panel boczny ───────────────────────────────────────────────────── */}
+        {/* ── Panel boczny  */}
         <aside className="sidebar">
           {/* Instrukcja */}
           <div className="step-indicator">
@@ -156,7 +156,7 @@ const App: React.FC = () => {
           />
         </aside>
 
-        {/* ── Mapa ───────────────────────────────────────────────────────────── */}
+        {/* Mapa*/}
         <main className="map-wrapper">
           <MapView
             start={start}

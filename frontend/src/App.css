@@ -1,4 +1,4 @@
-/* ── Reset i podstawy ───────────────────────────────────────────────────────── */
+/*  Reset i podstawy */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +12,7 @@ body {
   background: #f1f5f9;
 }
 
-/* ── Główny layout ───────────────────────────────────────────────────────────── */
+/* Główny layout */
 .app {
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@ body {
   overflow: hidden;
 }
 
-/* ── Panel boczny ────────────────────────────────────────────────────────────── */
+/*  Panel boczny */
 .sidebar {
   width: 340px;
   flex-shrink: 0;
@@ -68,7 +68,7 @@ body {
   padding: 14px;
 }
 
-/* ── Wskaźnik kroku ──────────────────────────────────────────────────────────── */
+/* Wskaźnik kroku */
 .step-indicator {
   background: #eff6ff;
   border: 1px solid #bfdbfe;
@@ -79,79 +79,7 @@ body {
   font-weight: 500;
 }
 
-/* ── Wyszukiwarka adresów ─────────────────────────────────────────────────────── */
-.address-section {
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.address-section summary {
-  padding: 10px 12px;
-  cursor: pointer;
-  background: #f8fafc;
-  font-weight: 500;
-  font-size: 13px;
-  user-select: none;
-}
-
-.address-section summary:hover {
-  background: #f1f5f9;
-}
-
-.address-search {
-  padding: 10px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.address-row {
-  display: flex;
-  gap: 6px;
-}
-
-.address-input {
-  flex: 1;
-  padding: 7px 10px;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  font-size: 12px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.address-input:focus {
-  border-color: #6366f1;
-}
-
-.address-btn {
-  padding: 7px 10px;
-  border: none;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.address-btn--start {
-  background: #22c55e;
-  color: white;
-}
-
-.address-btn--end {
-  background: #ef4444;
-  color: white;
-}
-
-.address-status {
-  font-size: 12px;
-  color: #64748b;
-  padding: 4px 2px;
-}
-
-/* ── Ustawienia ──────────────────────────────────────────────────────────────── */
+/* Ustawienia */
 .settings-section {
   background: #f8fafc;
   border-radius: 8px;
@@ -184,7 +112,7 @@ body {
   min-width: 40px;
 }
 
-/* ── Informacje o punktach ────────────────────────────────────────────────────── */
+/* Informacje o punktach */
 .points-info {
   display: flex;
   flex-direction: column;
@@ -207,7 +135,7 @@ body {
   border-color: #bbf7d0;
 }
 
-/* ── Przyciski akcji ─────────────────────────────────────────────────────────── */
+/* Przyciski akcji */
 .action-buttons {
   display: flex;
   gap: 8px;
@@ -247,7 +175,7 @@ body {
   color: #475569;
 }
 
-/* ── Panel wyników ───────────────────────────────────────────────────────────── */
+/*  Panel wyników */
 .results-panel {
   flex: 1;
 }
@@ -276,7 +204,7 @@ body {
   gap: 8px;
 }
 
-/* ── Pozycja w rankingu ───────────────────────────────────────────────────────── */
+/* Pozycja w rankingu */
 .result-item {
   display: flex;
   align-items: flex-start;
@@ -362,7 +290,7 @@ body {
   color: #6366f1;
 }
 
-/* ── Mapa ────────────────────────────────────────────────────────────────────── */
+/*  Mapa */
 .map-wrapper {
   flex: 1;
   position: relative;
